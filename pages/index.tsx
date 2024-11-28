@@ -1,6 +1,7 @@
 import Head from "next/head";
 import homeStyle from "../styles/Home.module.css";
 import { getSortedPostsData } from "@/lib/post";
+import Link from "next/link";
 
 export const getStaticProps = async () => {
   const allPostsData = getSortedPostsData();
@@ -31,7 +32,7 @@ function Home({
         <ul className={homeStyle.list}>
           {allPostsData.map(({ id, date, title }) => (
             <li className={homeStyle.listItem} key={id}>
-              <a href="">{title}</a>
+              <Link href={`/posts/${id}`}>{title}</Link>
               <br />
               <small className={homeStyle.lightText}>{date}</small>
             </li>
