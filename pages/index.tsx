@@ -18,7 +18,7 @@ function Home({
   allPostsData: { date: string; title: string; id: string }[];
 }) {
   return (
-    <>
+    <div className={homeStyle.container}>
       <Head>
         <title>SK</title>
         <link rel="icon" href="/favicon.ico" />
@@ -39,7 +39,7 @@ function Home({
           ))}
         </ul>
       </section>
-    </>
+    </div>
   );
 }
 
